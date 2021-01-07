@@ -45,8 +45,9 @@ SmollSPA.getLink = function(search_path) {
 
 SmollSPA.activateLink = function(active_path) {
     var link = SmollSPA.getLink(active_path);
-    for(var className of SmollSPA.activeClass[active_path]) 
-        link.classList.add(className);
+    if(Object.keys(SmollSPA.activeClass).length)
+        for(var className of SmollSPA.activeClass[active_path]) 
+            link.classList.add(className);
 };
 
 SmollSPA.deactivateAll = function() {
